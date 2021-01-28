@@ -42,6 +42,23 @@ describe('package-entrypoints exports configuration', () => {
     }
   });
 
+  it('export-map-internal-imports', async () => {
+    const cwd = __dirname;
+    const dest = path.join(cwd, 'test-export-map-internal-imports');
+
+    console.log(await runTest(
+      [
+        'export-map-internal-imports',
+        'export-map-internal-imports/imported-by-entrypoint',
+        'export-map-internal-imports/imports-entrypoint',
+      ],
+      {
+        cwd,
+        dest,
+      },
+    ));
+  });
+
   it.skip('"exports": "./index.js"', async () => {
     // This should be in the "supports all of the variations" test, putting here for visibility.
   });
