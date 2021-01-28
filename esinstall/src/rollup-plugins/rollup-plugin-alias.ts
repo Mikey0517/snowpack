@@ -1,5 +1,9 @@
 /**
-This plugin was forked from the https://github.com/rollup/plugins/tree/master/packages/alias package:
+This plugin was forked from the https://github.com/rollup/plugins/tree/master/packages/alias package.
+
+It preserves most of the original code, but added changes to remove "customResolver" support (not needed by us)
+and added "exact" match support to the "entries" input. In the original plugin, string entries are always non-exact
+and we couldn't use RegExp reliably because we were dealing with user-generated inputs.
 
 The MIT License (MIT)
 
